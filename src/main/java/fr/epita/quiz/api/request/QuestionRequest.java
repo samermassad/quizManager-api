@@ -1,9 +1,10 @@
-package fr.epita.quiz.api.question.list;
+package fr.epita.quiz.api.request;
 
 import fr.epita.quiz.datamodel.QuestionType;
 
-public class QuestionListRequest {
+public class QuestionRequest {
 
+	private int id;
 	private String question;
 	private QuestionType type;
 	
@@ -19,6 +20,12 @@ public class QuestionListRequest {
 	}
 	public void setType(QuestionType type) {
 		this.type = type;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }
