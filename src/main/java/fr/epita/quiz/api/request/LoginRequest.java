@@ -1,4 +1,4 @@
-package fr.epita.quiz.api.login;
+package fr.epita.quiz.api.request;
 
 public class LoginRequest {
 

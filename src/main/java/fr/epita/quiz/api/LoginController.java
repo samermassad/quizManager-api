@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.epita.quiz.api.login.LoginRequest;
-import fr.epita.quiz.api.login.LoginResponse;
+import fr.epita.quiz.api.request.LoginRequest;
+import fr.epita.quiz.api.response.LoginResponse;
 import fr.epita.quiz.datamodel.UserLogin;
 import fr.epita.quiz.services.AuthenticationService;
 
