@@ -19,7 +19,7 @@ import fr.epita.quiz.services.QuestionDAO;
 
 @RestController
 @RequestMapping
-public class QuestionListController {
+public class QuestionController {
 
 	@Inject
 	QuestionDAO questionDao;
