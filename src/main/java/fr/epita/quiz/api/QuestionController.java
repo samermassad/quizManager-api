@@ -60,7 +60,7 @@ public class QuestionController {
 	}
 	
 	@RequestMapping(value = "question", method = RequestMethod.PUT)
-	public SuccessResponse createQuestions(@RequestBody QuestionRequest request) {
+	public SuccessResponse createQuestion(@RequestBody QuestionRequest request) {
 
 		SuccessResponse response = new SuccessResponse();
 
@@ -74,13 +74,12 @@ public class QuestionController {
 		} catch(Exception e) {
 			response.setSuccess(false);
 		}
-		
 		return response;
 	}
 
 	@RequestMapping(value = "question", method = RequestMethod.DELETE)
-	public SuccessResponse deleteQuestions(@RequestParam("id") int id) {
-
+	public SuccessResponse deleteQuestion(@RequestParam("id") int id) {
+System.out.println("Deleting");
 		SuccessResponse response = new SuccessResponse();
 
 		Question question = new Question();
@@ -97,7 +96,7 @@ public class QuestionController {
 	}
 
 	@RequestMapping(value = "question", method = RequestMethod.POST)
-	public SuccessResponse updateQuestions(@RequestBody QuestionRequest request) {
+	public SuccessResponse updateQuestion(@RequestBody QuestionRequest request) {
 
 		SuccessResponse response = new SuccessResponse();
 
@@ -112,7 +111,6 @@ public class QuestionController {
 		} catch(Exception e) {
 			response.setSuccess(false);
 		}
-		
 		return response;
 	}
 
