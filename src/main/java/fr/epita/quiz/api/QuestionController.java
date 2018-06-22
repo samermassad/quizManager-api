@@ -24,7 +24,7 @@ public class QuestionController {
 	@Inject
 	QuestionDAO questionDao;
 
-	@RequestMapping(value = "question", method = RequestMethod.GET)
+	@RequestMapping(value = "question", method = RequestMethod.GET, params = {"question","type"})
 	public ListResponse<Question> listQuestions(
 			@RequestParam("question") String name,
 			@RequestParam("type") QuestionType questionType) {
@@ -32,15 +32,31 @@ public class QuestionController {
 		ListResponse<Question> response = new ListResponse<>();
 
 		Question question = new Question();
-		question.setQuestion(name);
+		if(!name.isEmpty())
+			question.setQuestion(name);
 		question.setType(questionType);
 
 		List<Question> results = questionDao.search(question);
-
+		
 		response.setSuccess(true);
 		response.setResponse(results);
 
 		return response;
+	}
+	
+	@RequestMapping(value = "question", method = RequestMethod.GET, params = "id")
+	public Question getQuestion(@RequestParam("id") int id) {
+
+		Question question = new Question();
+		question.setId(id);
+
+		List<Question> results = questionDao.search(question);
+		if(results.size() != 0) {
+			System.out.println("Results size: " + results.size());
+			return results.get(0);
+		}
+		System.out.println("Returning null");
+		return null;
 	}
 	
 	@RequestMapping(value = "question", method = RequestMethod.PUT)
@@ -63,14 +79,12 @@ public class QuestionController {
 	}
 
 	@RequestMapping(value = "question", method = RequestMethod.DELETE)
-	public SuccessResponse deleteQuestions(@RequestBody QuestionRequest request) {
+	public SuccessResponse deleteQuestions(@RequestParam("id") int id) {
 
 		SuccessResponse response = new SuccessResponse();
 
 		Question question = new Question();
-		question.setId(request.getId());
-		question.setQuestion(request.getQuestion());
-		question.setType(request.getType());
+		question.setId(id);
 
 		try {
 			questionDao.delete(question);

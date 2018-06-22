@@ -30,7 +30,8 @@ public class ExamController {
 		ListResponse<Exam> response = new ListResponse<>();
 
 		Exam exam = new Exam();
-		exam.setName(name);
+		if(!name.isEmpty())
+			exam.setName(name);
 
 		List<Exam> results = examDao.search(exam);
 

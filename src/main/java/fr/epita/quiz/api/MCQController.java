@@ -37,9 +37,7 @@ public class MCQController {
 
 		MCQChoice mcq = new MCQChoice();
 		Question question = new Question();
-		question.setId(13);
-		question.setQuestion("Updated :D");
-		question.setType(QuestionType.MCQ);
+		question.setId(questionID);
 		mcq.setQuestion(question);
 
 		List<MCQChoice> results = mcqDao.search(mcq);
