@@ -26,11 +26,17 @@ public class ExamQuestionRelController {
 	ExamQuestionRelDAO examQuestionRelDao;
 
 	@RequestMapping(value = "examQuestionRel", method = RequestMethod.GET)
-	public ListResponse<ExamQuestionRel> listExamQuestionRels(@RequestParam("question") Question question,
-			@RequestParam("exam") Exam exam) {
+	public ListResponse<ExamQuestionRel> listExamQuestionRels(@RequestParam("question") int questionId,
+			@RequestParam("exam") int examId) {
 
 		ListResponse<ExamQuestionRel> response = new ListResponse<>();
 
+		Question question = new Question();
+		question.setId(questionId);
+		
+		Exam exam = new Exam();
+		exam.setId(examId);
+		
 		ExamQuestionRel examQuestionRel = new ExamQuestionRel();
 		examQuestionRel.setQuestion(question);
 		examQuestionRel.setExam(exam);

@@ -64,7 +64,7 @@ public class QuestionController {
 
 		Question question = new Question();
 		question.setQuestion(request.getQuestion());
-		question.setType(request.getType());
+		question.setType(QuestionType.MCQ);
 
 		try {
 			questionDao.create(question);

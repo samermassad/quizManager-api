@@ -23,7 +23,9 @@ POST request: `{server-url}/rest/login` with a JSON body: `{"username":"user","p
 
 PUT requests:
 	`{server-url}/rest/question` with a JSON body: `{"question":"Question Body?","type":"MCQ"}`
+	
 	`{server-url}/rest/exam` with a JSON body: `{"name":"Exam Name"}`
+	
 	`{server-url}/rest/mcq` with a JSON body: `{"choice":"Choice Body?","valid":true,"order":1,"question":question}`
 
 ##### Login
