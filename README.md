@@ -6,7 +6,13 @@ Exposes the services of the quizManager-core as a REST API.
 
 Quiz Manager services can be easily used as following:
 
-#### Create a new user
+### Managing Users
 
-`{server-url}/rest/createUser?username={username}&password={password}`
+##### Create a new user
+
+GET request: `{server-url}/rest/createLogin?username={username}&password={password}`
+
+##### Login
+
+POST request: `{server-url}/rest/login` with a JSON body: `{"username":"user","password":"pass"}`
 
