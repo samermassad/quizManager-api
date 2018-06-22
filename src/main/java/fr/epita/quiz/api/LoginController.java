@@ -1,5 +1,7 @@
 package fr.epita.quiz.api;
 
+import java.security.NoSuchAlgorithmException;
+
 import javax.inject.Inject;
 
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,7 +28,7 @@ public class LoginController {
 	UserDAO userDao;
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public LoginResponse login(@RequestBody LoginRequest request) {
+	public LoginResponse login(@RequestBody LoginRequest request) throws NoSuchAlgorithmException {
 		LoginResponse response = new LoginResponse();
 		String username = request.getUsername();
 		String password = request.getPassword();
@@ -41,9 +43,8 @@ public class LoginController {
 	
 	
 	@RequestMapping(value = "/createLogin", method = RequestMethod.GET)
-	public SuccessResponse login(@RequestParam String username, @RequestParam String password) {
+	public SuccessResponse login(@RequestParam String username, @RequestParam String password) throws NoSuchAlgorithmException {
 		SuccessResponse response = new SuccessResponse();
-		System.out.println(username+password);
 		UserLogin user = new UserLogin();
 		user.setUserName(username);
 		user.setPassword(password);

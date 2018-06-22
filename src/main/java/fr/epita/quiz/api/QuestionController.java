@@ -51,11 +51,9 @@ public class QuestionController {
 		question.setId(id);
 
 		List<Question> results = questionDao.search(question);
-		if(results.size() != 0) {
-			System.out.println("Results size: " + results.size());
+		if(!results.isEmpty()) {
 			return results.get(0);
 		}
-		System.out.println("Returning null");
 		return null;
 	}
 	
@@ -79,7 +77,7 @@ public class QuestionController {
 
 	@RequestMapping(value = "question", method = RequestMethod.DELETE)
 	public SuccessResponse deleteQuestion(@RequestParam("id") int id) {
-System.out.println("Deleting");
+		
 		SuccessResponse response = new SuccessResponse();
 
 		Question question = new Question();

@@ -15,7 +15,6 @@ import fr.epita.quiz.api.response.ListResponse;
 import fr.epita.quiz.api.response.SuccessResponse;
 import fr.epita.quiz.datamodel.MCQChoice;
 import fr.epita.quiz.datamodel.Question;
-import fr.epita.quiz.datamodel.QuestionType;
 import fr.epita.quiz.services.MCQChoiceDAO;
 import fr.epita.quiz.services.QuestionDAO;
 
