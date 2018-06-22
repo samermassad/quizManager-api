@@ -1,4 +1,5 @@
-# quizManager-API
+# QuizManager-API
+#### Version 1.0
 
 Exposes the services of the quizManager-core as a REST API.
 
@@ -61,3 +62,10 @@ POST requests:
 	`{server-url}/rest/mcq` with a JSON body: `{"choice":"Choice Body?","valid":true,"order":1,"question":question}`
 	
 	`{server-url}/rest/examQuestionRel` with a JSON body: `{"exam":exam,"question":question}`
+	
+
+## Author
+
+Samer Masaad
+
+
